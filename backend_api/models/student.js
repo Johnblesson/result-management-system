@@ -5,7 +5,7 @@ const studentsSchema = new mongoose.Schema({
     lastName: { type: String, required: true },
     dob: { type: Date, required: true },
     class: { type: String, required: true },
-    gpa: { type: String, required: true, unique: true }
+    gpa: { type: Number, required: true }
 })
 
 module.exports = mongoose.model('Students', studentsSchema)
