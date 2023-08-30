@@ -1,13 +1,23 @@
+
 POST http://localhost:3000/students
 Content-Type: application/json
-{
-  "firstName": "John",
-  "lastName": "Doe",
-  "dob": "2000-01-01",
-  "class": "10th Grade",
-  "gpa": "4.0"
-}
+    {
+        "firstName": "Kharis",
+        "lastName": "Blesson",
+        "dob": "new Date('2000-01-15')",
+        "class": "5th Grade",
+        "gpa": "2.5",
+        "subjects": [
+            { "name": "Mathematics", "score": "82" },
+            { "name": "Science", "score": "96" },
+            { "name": "English", "score": "55" },
+            { "name": "Economics", "score": "80" },
+            { "name": "Physics", "score": "70" },
+            { "name": "Chemistry", "score": "60" }
+        ]
+    }
 
 ###
 GET http://localhost:3000/students
+
 

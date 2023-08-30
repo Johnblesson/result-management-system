@@ -1,7 +1,7 @@
 {
   "name": "nodejs-user-authentication",
   "version": "1.0.0",
-  "description": "",
+  "description": "This is a student result management system, and this is the backend portion of the application",
   "main": "index.js",
   "scripts": {
     "start": "node login.js",

@@ -1,7 +1,7 @@
 {
   "name": "rest_api",
   "version": "1.0.0",
-  "description": "",
+  "description": "This is a student result management system: and this is the backend portion of the application",
   "main": "index.js",
   "scripts": {
     "dev": "nodemon server.js"

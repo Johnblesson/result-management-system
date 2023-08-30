@@ -12,36 +12,38 @@ router.get('/', async (req, res) => {
   }
 })
 
-// Getting One
+// Getting One student
 router.get('/:id', getStudent, (req, res) => {
   res.json(res.student)
 })
 
 // Create a new student
 router.post('/', async (req, res) => {
-  const student = new Student({
+  const students = new Student({
+    profileImage: req.body.profileImage,
     firstName: req.body.firstName,
     lastName: req.body.lastName,
     dob: req.body.dob,
     class: req.body.class,
-    gpa: req.body.gpa
+    gpa: req.body.gpa,
+   subjects: req.body.subjects,
   });
 
   try {
-    const newStudent = await student.save()
+    const newStudent = await students.save()
     res.status(201).json(newStudent)
   } catch (err) {
     res.status(400).json({ message: err.message });
   }
 });
 
-// Updating One
+// Updating Students
 router.patch('/:id', getStudent, async (req, res) => {
-  if (req.body.name != null) {
-    res.student.name = req.body.name
-  }
   if (req.body.firstName != null) {
     res.student.firstName = req.body.firstName
+  }
+  if (req.body.lasttName != null) {
+    res.student.lasttName = req.body.lasttName
   }
   try {
     const updatedStudent = await res.student.save()
@@ -51,7 +53,7 @@ router.patch('/:id', getStudent, async (req, res) => {
   }
 })
 
-// Deleting One
+// Deleting Students
 router.delete('/:id', getStudent, async (req, res) => {
   try {
     await res.student.remove()
@@ -61,6 +63,7 @@ router.delete('/:id', getStudent, async (req, res) => {
   }
 })
 
+// Middleware
 async function getStudent(req, res, next) {
   let student
   try {

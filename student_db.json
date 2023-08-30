@@ -1,0 +1,342 @@
+{
+  "students": [
+    {
+      "profileImage": "https://sierrachurch.vercel.app/images/blesson1.jpeg",
+      "firstName": "John",
+      "lastName": "Rowe",
+      "dob": "2006-01-01",
+      "class": "10th Grade",
+      "gpa": "4.0",
+      "subjects": [
+        {
+          "name": "Mathematics",
+          "score": "85"
+        },
+        {
+          "name": "Science",
+          "score": "96"
+        },
+        {
+          "name": "English",
+          "score": "90"
+        },
+        {
+          "name": "Economics",
+          "score": "100"
+        },
+        {
+          "name": "Physics",
+          "score": "95"
+        },
+        {
+          "name": "Chemistry",
+          "score": "98"
+        }
+      ]
+    },
+    {
+      "profileImage": "https://sierrachurch.vercel.app/images/_male.jpg",
+      "firstName": "John",
+      "lastName": "Doe",
+      "dob": "1999-05-03",
+      "class": "6th Grade",
+      "gpa": "3.2",
+      "subjects": [
+        { "name": "Mathematics", "score": "75" },
+        { "name": "Science", "score": "85" },
+        { "name": "English", "score": "70" },
+        { "name": "Economics", "score": "65" },
+        { "name": "Physics", "score": "78" },
+        { "name": "Chemistry", "score": "82" }
+      ]
+    },
+    {
+      "profileImage": "https://sierrachurch.vercel.app/images/_female.jpg",
+      "firstName": "Alice",
+      "lastName": "Smith",
+      "dob": "2001-03-10",
+      "class": "4th Grade",
+      "gpa": "3.8",
+      "subjects": [
+        { "name": "Mathematics", "score": "85" },
+        { "name": "Science", "score": "92" },
+        { "name": "English", "score": "88" },
+        { "name": "Economics", "score": "85" },
+        { "name": "Physics", "score": "89" },
+        { "name": "Chemistry", "score": "87" }
+      ]
+    },
+    {
+      "profileImage": "https://sierrachurch.vercel.app/images/_male.jpg",
+      "firstName": "Michael",
+      "lastName": "Johnson",
+      "dob": "2002-07-20",
+      "class": "7th Grade",
+      "gpa": "3.5",
+      "subjects": [
+        { "name": "Mathematics", "score": "80" },
+        { "name": "Science", "score": "78" },
+        { "name": "English", "score": "82" },
+        { "name": "Economics", "score": "70" },
+        { "name": "Physics", "score": "72" },
+        { "name": "Chemistry", "score": "78" }
+      ]
+    },
+    {
+      "profileImage": "https://sierrachurch.vercel.app/images/_female.jpg",
+      "firstName": "Emily",
+      "lastName": "Brown",
+      "dob": "2003-11-02",
+      "class": "8th Grade",
+      "gpa": "4.0",
+      "subjects": [
+        { "name": "Mathematics", "score": "98" },
+        { "name": "Science", "score": "98" },
+        { "name": "English", "score": "92" },
+        { "name": "Economics", "score": "85" },
+        { "name": "Physics", "score": "91" },
+        { "name": "Chemistry", "score": "97" }
+      ]
+    },
+    {
+      "profileImage": "https://sierrachurch.vercel.app/images/_male.jpg",
+      "firstName": "Daniel",
+      "lastName": "Williams",
+      "dob": "2001-09-18",
+      "class": "5th Grade",
+      "gpa": "3.2",
+      "subjects": [
+        { "name": "Mathematics", "score": "78" },
+        { "name": "Science", "score": "82" },
+        { "name": "English", "score": "70" },
+        { "name": "Economics", "score": "82" },
+        { "name": "Physics", "score": "76" },
+        { "name": "Chemistry", "score": "80" }
+      ]
+    },
+    {
+      "profileImage": "https://sierrachurch.vercel.app/images/_female.jpg",
+      "firstName": "Sophia",
+      "lastName": "Miller",
+      "dob": "2002-04-25",
+      "class": "6th Grade",
+      "gpa": "3.9",
+      "subjects": [
+        { "name": "Mathematics", "score": "92" },
+        { "name": "Science", "score": "94" },
+        { "name": "English", "score": "90" },
+        { "name": "Economics", "score": "87" },
+        { "name": "Physics", "score": "91" },
+        { "name": "Chemistry", "score": "89" }
+      ]
+    },
+    {
+      "profileImage": "https://sierrachurch.vercel.app/images/_male.jpg",
+      "firstName": "Matthew",
+      "lastName": "Jones",
+      "dob": "2003-06-15",
+      "class": "7th Grade",
+      "gpa": "3.7",
+      "subjects": [
+        { "name": "Mathematics", "score": "85" },
+        { "name": "Science", "score": "88" },
+        { "name": "English", "score": "81" },
+        { "name": "Economics", "score": "75" },
+        { "name": "Physics", "score": "79" },
+        { "name": "Chemistry", "score": "83" }
+      ]
+    },
+    {
+      "profileImage": "https://sierrachurch.vercel.app/images/_female.jpg",
+      "firstName": "Olivia",
+      "lastName": "Davis",
+      "dob": "2002-12-05",
+      "class": "8th Grade",
+      "gpa": "3.6",
+      "subjects": [
+        { "name": "Mathematics", "score": "83" },
+        { "name": "Science", "score": "87" },
+        { "name": "English", "score": "82" },
+        { "name": "Economics", "score": "78" },
+        { "name": "Physics", "score": "81" },
+        { "name": "Chemistry", "score": "85" }
+      ]
+    },
+    {
+      "profileImage": "https://sierrachurch.vercel.app/images/_male.jpg",
+      "firstName": "Ethan",
+      "lastName": "Martinez",
+      "dob": "2001-08-12",
+      "class": "5th Grade",
+      "gpa": "3.1",
+      "subjects": [
+        { "name": "Mathematics", "score": "76" },
+        { "name": "Science", "score": "80" },
+        { "name": "English", "score": "68" },
+        { "name": "Economics", "score": "66" },
+        { "name": "Physics", "score": "74" },
+        { "name": "Chemistry", "score": "87" }
+      ]
+    },
+    {
+      "profileImage": "https://sierrachurch.vercel.app/images/_female.jpg",
+      "firstName": "Ava",
+      "lastName": "Rodriguez",
+      "dob": "2002-02-28",
+      "class": "6th Grade",
+      "gpa": "3.8",
+      "subjects": [
+        { "name": "Mathematics", "score": "90" },
+        { "name": "Science", "score": "92" },
+        { "name": "English", "score": "88" },
+        { "name": "Economics", "score": "85" },
+        { "name": "Physics", "score": "89" },
+        { "name": "Chemistry", "score": "87" }
+      ]
+    },
+    {
+      "profileImage": "https://sierrachurch.vercel.app/images/_male.jpg",
+      "firstName": "William",
+      "lastName": "Lopez",
+      "dob": "2003-10-09",
+      "class": "7th Grade",
+      "gpa": "3.4",
+      "subjects": [
+        { "name": "Mathematics", "score": "78" },
+        { "name": "Science", "score": "82" },
+        { "name": "English", "score": "76" },
+        { "name": "Economics", "score": "85" },
+        { "name": "Physics", "score": "87" },
+        { "name": "Chemistry", "score": "80" }
+      ]
+    },
+    {
+      "profileImage": "https://sierrachurch.vercel.app/images/_female.jpg",
+      "firstName": "Isabella",
+      "lastName": "Garcia",
+      "dob": "2002-01-14",
+      "class": "8th Grade",
+      "gpa": "4.0",
+      "subjects": [
+        { "name": "Mathematics", "score": "95" },
+        { "name": "Science", "score": "98" },
+        { "name": "English", "score": "92" },
+        { "name": "Economics", "score": "88" },
+        { "name": "Physics", "score": "98" },
+        { "name": "Chemistry", "score": "97" }
+      ]
+    },
+    {
+      "profileImage": "https://sierrachurch.vercel.app/images/_male.jpg",
+      "firstName": "James",
+      "lastName": "Perez",
+      "dob": "2001-07-23",
+      "class": "5th Grade",
+      "gpa": "3.3",
+      "subjects": [
+        { "name": "Mathematics", "score": "80" },
+        { "name": "Science", "score": "84" },
+        { "name": "English", "score": "72" },
+        { "name": "Economics", "score": "70" },
+        { "name": "Physics", "score": "78" },
+        { "name": "Chemistry", "score": "82" }
+      ]
+    },
+    {
+      "profileImage": "https://sierrachurch.vercel.app/images/_female.jpg",
+      "firstName": "Charlotte",
+      "lastName": "Hernandez",
+      "dob": "2002-05-16",
+      "class": "6th Grade",
+      "gpa": "3.9",
+      "subjects": [
+        { "name": "Mathematics", "score": "92" },
+        { "name": "Science", "score": "94" },
+        { "name": "English", "score": "90" },
+        { "name": "Economics", "score": "87" },
+        { "name": "Physics", "score": "91" },
+        { "name": "Chemistry", "score": "89" }
+      ]
+    },
+    {
+      "profileImage": "https://sierrachurch.vercel.app/images/_male.jpg",
+      "firstName": "Liam",
+      "lastName": "Gonzalez",
+      "dob": "2003-09-21",
+      "class": "7th Grade",
+      "gpa": "3.6",
+      "subjects": [
+        { "name": "Mathematics", "score": "85" },
+        { "name": "Science", "score": "88" },
+        { "name": "English", "score": "82" },
+        { "name": "Economics", "score": "75" },
+        { "name": "Physics", "score": "79" },
+        { "name": "Chemistry", "score": "83" }
+      ]
+    },
+    {
+      "profileImage": "https://sierrachurch.vercel.app/images/_female.jpg",
+      "firstName": "Mia",
+      "lastName": "Rivera",
+      "dob": "2002-11-03",
+      "class": "8th Grade",
+      "gpa": "3.7",
+      "subjects": [
+        { "name": "Mathematics", "score": "83" },
+        { "name": "Science", "score": "87" },
+        { "name": "English", "score": "80" },
+        { "name": "Economics", "score": "78" },
+        { "name": "Physics", "score": "87" },
+        { "name": "Chemistry", "score": "85" }
+      ]
+    },
+    {
+      "profileImage": "https://sierrachurch.vercel.app/images/_male.jpg",
+      "firstName": "Noah",
+      "lastName": "Sanchez",
+      "dob": "2001-04-17",
+      "class": "5th Grade",
+      "gpa": "3.2",
+      "subjects": [
+        { "name": "Mathematics", "score": "78" },
+        { "name": "Science", "score": "82" },
+        { "name": "English", "score": "70" },
+        { "name": "Economics", "score": "68" },
+        { "name": "Physics", "score": "76" },
+        { "name": "Chemistry", "score": "80" }
+      ]
+    },
+    {
+      "profileImage": "https://sierrachurch.vercel.app/images/_female.jpg",
+      "firstName": "Aiden",
+      "lastName": "Torres",
+      "dob": "2002-03-29",
+      "class": "6th Grade",
+      "gpa": "3.8",
+      "subjects": [
+        { "name": "Mathematics", "score": "90" },
+        { "name": "Science", "score": "92" },
+        { "name": "English", "score": "80" },
+        { "name": "Economics", "score": "85" },
+        { "name": "Physics", "score": "75" },
+        { "name": "Chemistry", "score": "87" }
+      ]
+    },
+    {
+      "profileImage": "https://sierrachurch.vercel.app/images/_male.jpg",
+      "firstName": "Emma",
+      "lastName": "Ortiz",
+      "dob": "2003-08-08",
+      "class": "7th Grade",
+      "gpa": "3.5",
+      "subjects": [
+        { "name": "Mathematics", "score": "80" },
+        { "name": "Science", "score": "76" },
+        { "name": "English", "score": "82" },
+        { "name": "Economics", "score": "70" },
+        { "name": "Physics", "score": "72" },
+        { "name": "Chemistry", "score": "78" }
+      ]
+    }
+  ]
+}
