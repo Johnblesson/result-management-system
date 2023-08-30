@@ -1,0 +1,19 @@
+{
+"students": [
+    {
+        "firstName": "",
+        "lastName": "",
+        "DOB":"",
+        "classLevel": "",
+        "studentId": "",
+        "subjects": {
+            "mathematics": "",
+            "science": "",
+            "english": "",
+            "economics": "",
+            "ict": "",
+            "socialStudies": ""
+        }
+    }
+]
+}

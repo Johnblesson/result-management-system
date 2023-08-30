@@ -1,0 +1,13 @@
+POST http://localhost:3000/students
+Content-Type: application/json
+{
+  "firstName": "John",
+  "lastName": "Doe",
+  "dob": "2000-01-01",
+  "class": "10th Grade",
+  "gpa": "4.0"
+}
+
+###
+GET http://localhost:3000/students
+
