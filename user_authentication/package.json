@@ -4,8 +4,8 @@
   "description": "This is a student result management system, and this is the backend portion of the application",
   "main": "index.js",
   "scripts": {
-    "start": "node login.js",
-    "dev": "nodemon login.js"
+    "start": "node index.js",
+    "dev": "nodemon index.js"
   },
   "keywords": [],
   "author": "",
