@@ -44,5 +44,3 @@
 - User authentication will secure admin access to token generation and data entry.
 - The Next.js 13 framework will provide smooth routing and enhanced frontend performance.
 - Thorough testing will ensure the system functions as intended before deployment.
-
-Please let me know when you're ready to move on to the next step or if you have any specific questions!
