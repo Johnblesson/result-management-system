@@ -56,5 +56,5 @@
 2. Sharon Wawira
 
 *Backend Developers*
-3. Osinachi Basil
-4. John Blesson Rowe
+1. Osinachi Basil
+2. John Blesson Rowe
