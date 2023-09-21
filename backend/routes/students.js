@@ -1,6 +1,6 @@
 const express = require('express')
 const router = express.Router()
-const Student = require('../models/student')
+const Student = require('../models/studentInfo')
 
 // Getting all
 router.get('/', async (req, res) => {
@@ -79,4 +79,4 @@ async function getStudent(req, res, next) {
   next()
 }
 
-module.exports = router
+module.exports = router;
