@@ -14,9 +14,11 @@ app.use(cors())
 
 const studentsRouter = require('./routes/students')
 const loginSignup = require('./routes/loginSignup')
+const adminLoginSignup = require('./routes/adminRoute')
 
 app.use('/api/students', studentsRouter)
 app.use('/api/users', loginSignup)
+app.use('/api/admin', adminLoginSignup)
 
 // Starting server
 const PORT = process.env.PORT || 8080
