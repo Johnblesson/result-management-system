@@ -1,13 +1,16 @@
-require("dotenv").config()
 const express = require("express")
+const bodyParser = require('body-parser')
+const cors = require('cors')
 const app = express()
+require("dotenv").config()
 
+// Database Connection
 const connectDB = require('./database/connection')
-
 connectDB;
 
-// To accept Json
-app.use(express.json())
+// Middleware
+app.use(bodyParser.json())
+app.use(cors())
 
 const studentsRouter = require('./routes/students')
 const loginSignup = require('./routes/loginSignup')

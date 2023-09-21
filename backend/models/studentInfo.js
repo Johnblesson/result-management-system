@@ -8,8 +8,9 @@ const subjectSchema = new mongoose.Schema({
 const studentSchema = new mongoose.Schema({
     firstName: { type: String, required: true },
     lastName: { type: String, required: true },
-    dob: { type: Date, required: true },
-    class: { type: String, required: true },
+    username: { type: String, required: true },
+    email: { type: String, required: false },
+    contact: { type: String, required: true },
     gpa: { type: Number, required: true },
     subjects: [subjectSchema]
 });
