@@ -2,14 +2,14 @@
 
 *Project Outline:*
 1. *Backend Development:*
-   - Choose a suitable backend technology stack (e.g., Node.js with Express).
+   - Backend technology stack (Node.js with Express).
    - Design a database schema to store student information and results.
    - Implement APIs for student result retrieval using unique tokens.
    - Develop an API for admin-generated tokens and result data entry.
    - Implement token validation and error handling.
 
 2. *Frontend Development:*
-   - Opt for Next.js 13 for frontend development.
+   - Next.js 13 for frontend development.
    - Set up project structure and configurations.
    - Create a landing page with a token input form.
    - Design a result display page to showcase student results.
@@ -44,3 +44,17 @@
 - User authentication will secure admin access to token generation and data entry.
 - The Next.js 13 framework will provide smooth routing and enhanced frontend performance.
 - Thorough testing will ensure the system functions as intended before deployment.
+
+# Technologies and Tools
+*Backend:* NodeJs with Express.Js
+*Database:* MongoDB
+*Frontend:* Next.js 13
+
+# Authors
+*Frontend Developers*
+1. Nnanna Echi
+2. Sharon Wawira
+
+*Backend Developers*
+3. Osinachi Basil
+4. John Blesson Rowe
