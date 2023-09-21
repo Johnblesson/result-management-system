@@ -46,9 +46,9 @@
 - Thorough testing will ensure the system functions as intended before deployment.
 
 # Technologies and Tools
-*Backend:* NodeJs with Express.Js
-*Database:* MongoDB
-*Frontend:* Next.js 13
+- *Backend:* NodeJs with Express.Js
+- *Database:* MongoDB
+- *Frontend:* Next.js 13
 
 # Authors
 *Frontend Developers*
