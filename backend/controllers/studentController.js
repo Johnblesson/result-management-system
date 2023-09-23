@@ -1,4 +1,28 @@
+const bcrypt = require('bcrypt');
 const Student = require('../models/studentInfo');
+
+// Controller for the login route
+async function login(req, res) {
+  try {
+    const user = await Student.findOne({ username: req.body.username });
+
+    if (!user) {
+      return res.send('User not found');
+    }
+
+    const passwordMatch = await bcrypt.compare(req.body.password, user.password);
+
+    if (passwordMatch) {
+      res.status(201).json(
+        { message: 'Login successfully'}
+        );
+    } else {
+      res.send('Incorrect password');
+    }
+  } catch (error) {
+    res.send('An error occurred while logging in.');
+  }
+}
 
 // Controller for GET all students
 async function getAllStudents(req, res) {
@@ -27,11 +51,16 @@ async function getStudentById(req, res) {
 
 // Controller for creating a new student
 async function createStudent(req, res) {
+
+  const saltRounds = 10;
+  const hashedPassword = await bcrypt.hash(req.body.password, saltRounds);
+
   const students = new Student({
     firstName: req.body.firstName,
     lastName: req.body.lastName,
     username: req.body.username,
     email: req.body.email,
+    password: hashedPassword,
     contact: req.body.contact,
     gpa: req.body.gpa,
     subjects: req.body.subjects,
@@ -105,4 +134,5 @@ module.exports = {
   updateStudentById,
   partiallyUpdateStudentById,
   deleteStudentById,
+  login,
 };

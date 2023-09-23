@@ -12,12 +12,11 @@ connectDB;
 app.use(bodyParser.json())
 app.use(cors())
 
+// Linking the studentRoute and the Admin Credentials (login and signup)
 const studentsRouter = require('./routes/students')
-const loginSignup = require('./routes/loginSignup')
 const adminLoginSignup = require('./routes/adminRoute')
 
 app.use('/api/students', studentsRouter)
-app.use('/api/users', loginSignup)
 app.use('/api/admin', adminLoginSignup)
 
 // Starting server

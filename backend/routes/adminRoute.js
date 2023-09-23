@@ -5,12 +5,12 @@ const authController = require('../controllers/adminController');
 // Routes
 router.get('/', authController.welcomeMessage);
 
-router.get('/adminSignup', (req, res) => {
+router.get('/signup', (req, res) => {
   res.render(data);
 });
 
-router.post('/adminSignup', authController.adminSignup);
+router.post('/signup', authController.adminSignup);
 
-router.post('/adminLogin', authController.adminLogin);
+router.post('/login', authController.adminLogin);
 
 module.exports = router;
