@@ -21,7 +21,7 @@ app.use('/api/v1/student', studentsRouter)
 app.use('/api/v1/admin', adminLoginSignup)
 
 // Contact route
-app.use('/contact', contactRoute);
+app.use('/api/v1/contact', contactRoute);
 
 // Starting server
 const PORT = process.env.PORT || 8080
