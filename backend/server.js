@@ -19,8 +19,6 @@ const contactRoute = require('./routes/contactRoute');
 
 app.use('/api/v1/student', studentsRouter)
 app.use('/api/v1/admin', adminLoginSignup)
-
-// Contact route
 app.use('/api/v1/contact', contactRoute);
 
 // Starting server
