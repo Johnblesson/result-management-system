@@ -55,14 +55,23 @@ async function createStudent(req, res) {
   const saltRounds = 10;
   const hashedPassword = await bcrypt.hash(req.body.password, saltRounds);
 
+// Personal Info & Credentials
   const students = new Student({
     firstName: req.body.firstName,
     lastName: req.body.lastName,
+    middleName: req.body.middleName,
     username: req.body.username,
     email: req.body.email,
     password: hashedPassword,
     contact: req.body.contact,
     gpa: req.body.gpa,
+
+// Emmergency Information
+    emergencyName: req.body.emergencyName,
+    emergencyContact: req.body.emergencyContact,
+    emergencyRelation: req.body.emergencyRelation,
+    emergencyAddress: req.body.emergencyAddress,
+
     subjects: req.body.subjects,
   });
 
@@ -102,6 +111,26 @@ async function partiallyUpdateStudentById(req, res) {
 
     if (req.body.firstName) {
       student.firstName = req.body.firstName;
+    }
+
+    if (req.body.lastName) {
+      student.lastName = req.body.lastName;
+    }
+
+    if (req.body.middleName) {
+      student.middleName = req.body.middleName;
+    }
+
+    if (req.body.username) {
+      student.username = req.body.username;
+    }
+
+    if (req.body.email) {
+      student.email = req.body.email;
+    }
+
+    if (req.body.password) {
+      student.password = req.body.password;
     }
     // ... (similar updates for other fields)
 
