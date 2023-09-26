@@ -65,14 +65,13 @@ async function createStudent(req, res) {
     password: hashedPassword,
     contact: req.body.contact,
     gpa: req.body.gpa,
+    grades: req.body.grades,
 
 // Emmergency Information
     emergencyName: req.body.emergencyName,
     emergencyContact: req.body.emergencyContact,
     emergencyRelation: req.body.emergencyRelation,
     emergencyAddress: req.body.emergencyAddress,
-
-    subjects: req.body.subjects,
   });
 
   try {

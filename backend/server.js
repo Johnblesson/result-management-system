@@ -17,7 +17,7 @@ const studentsRouter = require('./routes/students')
 const adminLoginSignup = require('./routes/adminRoute')
 const contactRoute = require('./routes/contactRoute');
 
-app.use('/api/v1/student', studentsRouter)
+app.use('/api/v1/students', studentsRouter)
 app.use('/api/v1/admin', adminLoginSignup)
 app.use('/api/v1/contact', contactRoute);
 
