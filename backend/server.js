@@ -15,9 +15,13 @@ app.use(cors())
 // Linking the studentRoute and the Admin Credentials (login and signup)
 const studentsRouter = require('./routes/students')
 const adminLoginSignup = require('./routes/adminRoute')
+const contactRoute = require('./routes/contactRoute');
 
 app.use('/api/v1/student', studentsRouter)
 app.use('/api/v1/admin', adminLoginSignup)
+
+// Contact route
+app.use('/contact', contactRoute);
 
 // Starting server
 const PORT = process.env.PORT || 8080
