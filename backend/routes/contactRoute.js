@@ -1,6 +1,6 @@
 const express = require('express');
 const router = express.Router();
-const contactController = require('../controllers/contactController'); // Update the path to your controller file
+const contactController = require('../controllers/contactController');
 
 // Create a new contact form submission
 router.post('/submit', contactController.submitContactForm);
