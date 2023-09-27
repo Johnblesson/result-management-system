@@ -13,12 +13,11 @@ const studentSchema = new mongoose.Schema({
     gender: { type: String, required: false },
 
     // Emmergency Information
-    emergencyInfo: {
-        emergencyName: { type: String, required: false },
-        emergencyContact: { type: String, required: false },
-        emergencyRelation: { type: String, required: false },
-        emergencyAddress: { type: String, required: false },
-    },
+    emergencyName: { type: String, required: false },
+    emergencyContact: { type: String, required: false },
+    emergencyRelation: { type: String, required: false },
+    emergencyAddress: { type: String, required: false },
+   
     grades: { 
                 year: String,
                 term1: {
@@ -34,8 +33,10 @@ const studentSchema = new mongoose.Schema({
                   scores: [Number],
                 },
               }
+    
 });
 
 const Student = mongoose.model('StudentsInfo', studentSchema);
 
 module.exports = Student;
+

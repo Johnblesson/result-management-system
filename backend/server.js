@@ -13,7 +13,7 @@ app.use(bodyParser.json())
 app.use(cors())
 
 // Linking the studentRoute and the Admin Credentials (login and signup)
-const studentsRouter = require('./routes/students')
+const studentsRouter = require('./routes/studentRoute')
 const adminLoginSignup = require('./routes/adminRoute')
 const contactRoute = require('./routes/contactRoute');
 

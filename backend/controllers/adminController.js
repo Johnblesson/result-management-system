@@ -1,5 +1,6 @@
 const bcrypt = require('bcrypt');
 const AdminCredential = require('../models/adminModel');
+const Notice = require('../models/notice')
 
 // Controller for the root route
 function welcomeMessage(req, res) {
@@ -47,8 +48,56 @@ async function adminLogin(req, res) {
   }
 }
 
+// Create a new notice
+async function createNotice (req, res) {
+  try {
+    const { from, content, topic, date, noticeFor } = req.body;
+
+    const errors = { noticeError: String };
+    const exisitingNotice = await Notice.findOne({ topic, content, date });
+    if (exisitingNotice) {
+      errors.noticeError = "Notice already created";
+      return res.status(400).json(errors);
+    }
+    const newNotice = await new Notice({
+      from,
+      content,
+      topic,
+      noticeFor,
+      date,
+    });
+    await newNotice.save();
+    return res.status(200).json({
+      success: true,
+      message: "Notice created successfully",
+      response: newNotice,
+    });
+  } catch (error) {
+    const errors = { backendError: String };
+    errors.backendError = error;
+    res.status(500).json(errors);
+  }
+};
+
+// Get Notice
+async function getNotices (req, res) {
+  try {
+    // Retrieve all notices from the database
+    const notices = await Notice.find();
+
+    // Return the list of notices as a JSON response
+    res.status(200).json(notices);
+  } catch (error) {
+    const errors = { backendError: String };
+    errors.backendError = error;
+    res.status(500).json(errors);
+  }
+};
+
 module.exports = {
   welcomeMessage,
   adminSignup,
   adminLogin,
+  createNotice,
+  getNotices,
 };

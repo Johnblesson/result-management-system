@@ -12,7 +12,7 @@ router.get('/', studentController.getAllStudents);
 router.get('/:id', studentController.getStudentById);
 
 // Create a new student
-router.post('/', studentController.createStudent);
+// router.post('/', studentController.createStudent);
 
 // Update a student by ID
 router.put('/:id', studentController.updateStudentById);
