@@ -57,6 +57,7 @@ async function createStudent(req, res) {
 
 // Personal Info & Credentials
   const students = new Student({
+    avatar: req.body.avatar,
     firstName: req.body.firstName,
     lastName: req.body.lastName,
     middleName: req.body.middleName,
@@ -64,7 +65,7 @@ async function createStudent(req, res) {
     email: req.body.email,
     password: hashedPassword,
     contact: req.body.contact,
-    gpa: req.body.gpa,
+    gender: req.body.gender,
     grades: req.body.grades,
 
 // Emmergency Information
@@ -107,7 +108,9 @@ async function partiallyUpdateStudentById(req, res) {
     if (!student) {
       return res.status(404).json({ message: 'Student not found' });
     }
-
+    if (req.body.avatar) {
+      student.avatar = req.body.avatar;
+    }
     if (req.body.firstName) {
       student.firstName = req.body.firstName;
     }
