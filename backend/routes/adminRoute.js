@@ -3,23 +3,29 @@ const router = express.Router();
 const adminController = require('../controllers/adminController');
 const studentController = require('../controllers/studentController');
 
-// Routes
 router.get('/', adminController.welcomeMessage);
-
-router.get('/signup', (req, res) => {
-  res.render(data);
-});
-
 router.post('/signup', adminController.adminSignup);
-
 router.post('/login', adminController.adminLogin);
+
+router.post("/createnotice", adminController.createNotice);
+router.get("/getnotice", adminController.getNotices);
 
 // Create a new student
 router.post('/createstudent', studentController.createStudent);
 
-router.post("/createnotice", adminController.createNotice);
+// GET all students
+router.get('/getstudents', studentController.getAllStudents);
 
-router.get("/getnotice", adminController.getNotices);
+// GET a single student by ID
+router.get('/getstudent/:id', studentController.getStudentById);
 
+// Update a student by ID
+router.put('/putstudent/:id', studentController.updateStudentById);
+
+// Partially update a student by ID
+router.patch('/patchstudent/:id', studentController.partiallyUpdateStudentById);
+
+// Delete a student by ID
+router.delete('/deletestudent/:id', studentController.deleteStudentById);
 
 module.exports = router;

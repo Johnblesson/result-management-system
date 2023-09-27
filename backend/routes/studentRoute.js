@@ -11,9 +11,6 @@ router.get('/', studentController.getAllStudents);
 // GET a single student by ID
 router.get('/:id', studentController.getStudentById);
 
-// Create a new student
-// router.post('/', studentController.createStudent);
-
 // Update a student by ID
 router.put('/:id', studentController.updateStudentById);
 
