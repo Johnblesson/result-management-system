@@ -2,6 +2,7 @@ const express = require('express');
 const router = express.Router();
 const adminController = require('../controllers/adminController');
 const studentController = require('../controllers/studentController');
+// const adminAuthMiddleware = require('../middleware/adminAuth');
 
 router.get('/', adminController.welcomeMessage);
 router.post('/signup', adminController.adminSignup);
