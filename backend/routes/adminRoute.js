@@ -2,31 +2,40 @@ const express = require('express');
 const router = express.Router();
 const adminController = require('../controllers/adminController');
 const studentController = require('../controllers/studentController');
-// const adminAuthMiddleware = require('../middleware/adminAuth');
 
+// Apply the adminAuthMiddleware to protect the admin routes
+// const adminAuthMiddleware = require('../middleware/adminAuth'); 
+// router.use(adminAuthMiddleware);
+
+// All the routes here requires administrator privileges
 router.get('/', adminController.welcomeMessage);
 router.post('/signup', adminController.adminSignup);
 router.post('/login', adminController.adminLogin);
+router.get('/dashboard', adminController.adminDashboard);
 
+// Get & Post Notice
 router.post("/createnotice", adminController.createNotice);
 router.get("/getnotice", adminController.getNotices);
 
-// Create a new student
+// Create a New Student
 router.post('/createstudent', studentController.createStudent);
 
-// GET all students
+// GET all Students
 router.get('/getstudents', studentController.getAllStudents);
 
-// GET a single student by ID
+// GET a single Student by ID
 router.get('/getstudent/:id', studentController.getStudentById);
 
-// Update a student by ID
+// Update a Student by ID
 router.put('/putstudent/:id', studentController.updateStudentById);
 
-// Partially update a student by ID
+// Partially Update a Student by ID
 router.patch('/patchstudent/:id', studentController.partiallyUpdateStudentById);
 
-// Delete a student by ID
+// Delete a Student by ID
 router.delete('/deletestudent/:id', studentController.deleteStudentById);
+
+// Update Student Password
+router.post("/updatepassword", studentController.updatedPassword);
 
 module.exports = router;

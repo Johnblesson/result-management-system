@@ -2,6 +2,10 @@ const express = require('express');
 const router = express.Router();
 const studentController = require('../controllers/studentController');
 
+// Apply the studentAuthMiddleware to protect the student routes
+// const studentAuthMiddleware = require('../middleware/studentAuth')
+// router.use(studentAuthMiddleware);
+
 // Login
 router.post('/login', studentController.login);
 
@@ -19,5 +23,8 @@ router.patch('/:id', studentController.partiallyUpdateStudentById);
 
 // Delete a student by ID
 router.delete('/:id', studentController.deleteStudentById);
+
+// Update student password
+router.post("/updatepassword", studentController.updatedPassword);
 
 module.exports = router;

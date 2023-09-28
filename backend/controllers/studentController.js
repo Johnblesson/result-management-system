@@ -1,5 +1,5 @@
 const bcrypt = require('bcrypt');
-const Student = require('../models/studentInfo');
+const Student = require('../models/student');
 
 // Controller for the login route
 async function login(req, res) {
@@ -131,8 +131,8 @@ async function partiallyUpdateStudentById(req, res) {
       student.email = req.body.email;
     }
 
-    if (req.body.password) {
-      student.password = req.body.password;
+    if (hashedPassword) {
+      student.hashedPassword = req.body.password;
     }
     // ... (similar updates for other fields)
 
@@ -142,6 +142,37 @@ async function partiallyUpdateStudentById(req, res) {
     res.status(500).json({ message: err.message });
   }
 }
+
+// Update student password
+async function updatedPassword(req, res) {
+  try {
+    const { newPassword, confirmPassword, email } = req.body;
+    const errors = { mismatchError: String };
+    if (newPassword !== confirmPassword) {
+      errors.mismatchError =
+        "Your password and confirmation password do not match";
+      return res.status(400).json(errors);
+    }
+
+    const student = await Student.findOne({ email });
+    let hashedPassword;
+    hashedPassword = await bcrypt.hash(newPassword, 10);
+    student.password = hashedPassword;
+    await student.save();
+    if (student.passwordUpdated === false) {
+      student.passwordUpdated = true;
+      await student.save();
+    }
+
+    res.status(200).json({
+      success: true,
+      message: "Password updated successfully",
+      response: student,
+    });
+  } catch (error) {
+    res.status(500).json(error);
+  }
+};
 
 // Controller for deleting a student by ID
 async function deleteStudentById(req, res) {
@@ -165,5 +196,6 @@ module.exports = {
   updateStudentById,
   partiallyUpdateStudentById,
   deleteStudentById,
+  updatedPassword,
   login,
 };

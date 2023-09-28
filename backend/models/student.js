@@ -11,6 +11,7 @@ const studentSchema = new mongoose.Schema({
     password: { type: String, required: true },
     contact: { type: Number, required: false },
     gender: { type: String, required: false },
+    // passwordUpdated: { type: Boolean, default: false },
 
     // Emmergency Information
     emergencyName: { type: String, required: false },
@@ -33,7 +34,6 @@ const studentSchema = new mongoose.Schema({
                   scores: [Number],
                 },
               }
-    
 });
 
 const Student = mongoose.model('StudentsInfo', studentSchema);

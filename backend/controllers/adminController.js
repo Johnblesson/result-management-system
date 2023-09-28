@@ -7,6 +7,13 @@ function welcomeMessage(req, res) {
   res.status(201).json({
     Message: 'Welcome to the Admin API',
   });
+} 
+
+// Admin Dashboard
+function adminDashboard(req, res) {
+  res.status(201).json({
+    Message: 'Welcome to the admin dashboard!',
+  });
 }
 
 // Controller for the signup route
@@ -96,6 +103,7 @@ async function getNotices (req, res) {
 
 module.exports = {
   welcomeMessage,
+  adminDashboard,
   adminSignup,
   adminLogin,
   createNotice,
