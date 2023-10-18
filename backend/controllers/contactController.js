@@ -1,7 +1,15 @@
+const { body, validationResult } = require('express-validator');
 const ContactForm = require('../models/contactForm');
 
 // Create a new contact form submission
 exports.submitContactForm = async (req, res) => {
+  // Check for validation errors
+  const errors = validationResult(req);
+  if (!errors.isEmpty()) {
+    // If there are validation errors, respond with a 400 status code and an error message
+    return res.status(400).json({ errors: errors.array() });
+  }
+
   try {
     const { name, email, subject, message } = req.body;
 
@@ -10,11 +18,10 @@ exports.submitContactForm = async (req, res) => {
 
     // Save the document to the database
     await newContact.save();
-
-    res.status(201).json({ message: 'Contact form submitted successfully' });
+    res.status(201).json({ message: 'Contact form submitted successfully', newContact });
   } catch (error) {
-    console.error(error);
-    res.status(500).json({ error: 'An error occurred while processing the request' });
+    console.log(error);
+    res.status(500).json({ message: 'An error occurred while processing the request' });
   }
 };
 
