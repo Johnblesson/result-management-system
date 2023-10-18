@@ -1,4 +1,5 @@
 const bcrypt = require('bcrypt');
+const { body, validationResult } = require('express-validator');
 const AdminCredential = require('../models/adminModel');
 const Notice = require('../models/notice')
 
@@ -18,6 +19,12 @@ function adminDashboard(req, res) {
 
 // Controller for the signup route
 async function adminSignup(req, res) {
+// Validation checks
+ const errors = validationResult(req);
+    if (!errors.isEmpty()) {
+        return res.status(400).json({ errors: errors.array() });
+    }
+
   try {
     const saltRounds = 10;
     const hashedPassword = await bcrypt.hash(req.body.password, saltRounds);
@@ -27,10 +34,23 @@ async function adminSignup(req, res) {
       password: hashedPassword,
     };
 
+// Check for duplicate usernames
+  const existingUser = await AdminCredential.findOne({ username: data.username });
+    if (existingUser) {
+      return res.status(400).json({ error: 'Username is already taken. Try something else!!!' });
+    }
+  
+// Ensure the password contains at least one uppercase letter, one lowercase letter, and is at least 6 characters long
+    if (!/^(?=.*[a-z])(?=.*[A-Z]).{6,}$/.test(req.body.password)) {
+      return res.status(400).json({
+        error: 'Password must be at least 6 characters long and contain both uppercase and lowercase letters.',
+          });
+    }
+
     await AdminCredential.insertMany([data]);
-    res.send('You have signed up successfully');
+    res.status(201).json({ message: 'You have signed up successfully' });
   } catch (error) {
-    res.send('An error occurred while signing up.');
+    res.status(500).json({ message: 'An error occurred while signing up.' });
   }
 }
 
@@ -40,18 +60,18 @@ async function adminLogin(req, res) {
     const user = await AdminCredential.findOne({ username: req.body.username });
 
     if (!user) {
-      return res.send('User not found');
+      return res.json({ message: 'User not found' });
     }
 
     const passwordMatch = await bcrypt.compare(req.body.password, user.password);
 
     if (passwordMatch) {
-      res.status(201).send('Login successfully');
+      res.status(201).json({ message: 'Login successfully' });
     } else {
-      res.send('Incorrect password');
+      res.json({ message: 'Incorrect password' });
     }
   } catch (error) {
-    res.send('An error occurred while logging in.');
+    res.status(500).json({ message: 'An error occurred while logging in.' });
   }
 }
 
@@ -70,7 +90,6 @@ async function createNotice (req, res) {
       from,
       content,
       topic,
-      noticeFor,
       date,
     });
     await newNotice.save();
@@ -86,20 +105,21 @@ async function createNotice (req, res) {
   }
 };
 
-// Get Notice
-async function getNotices (req, res) {
+// Get All Notice
+async function getNotices(req, res) {
   try {
     // Retrieve all notices from the database
     const notices = await Notice.find();
 
-    // Return the list of notices as a JSON response
-    res.status(200).json(notices);
+    res.status(200).json({
+      success: true,
+      notices: notices,
+    });
   } catch (error) {
-    const errors = { backendError: String };
-    errors.backendError = error;
-    res.status(500).json(errors);
+    console.error(error);
+    res.status(500).json({ error: 'Internal Server Error' });
   }
-};
+}
 
 module.exports = {
   welcomeMessage,

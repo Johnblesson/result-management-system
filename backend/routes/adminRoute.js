@@ -9,9 +9,9 @@ const studentController = require('../controllers/studentController');
 
 // All the routes here requires administrator privileges
 router.get('/', adminController.welcomeMessage);
+router.get('/dashboard', adminController.adminDashboard);
 router.post('/signup', adminController.adminSignup);
 router.post('/login', adminController.adminLogin);
-router.get('/dashboard', adminController.adminDashboard);
 
 // Get & Post Notice
 router.post("/createnotice", adminController.createNotice);
