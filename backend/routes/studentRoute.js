@@ -1,6 +1,7 @@
 const express = require('express');
 const router = express.Router();
 const studentController = require('../controllers/studentController');
+const contactController = require('../controllers/contactController');
 
 // Apply the studentAuthMiddleware to protect the student routes
 // const studentAuthMiddleware = require('../middleware/studentAuth')
@@ -26,5 +27,8 @@ router.delete('/:id', studentController.deleteStudentById);
 
 // Update student password
 router.post("/updatepassword", studentController.updatedPassword);
+
+// Create a new contact form submission
+router.post('/submit', contactController.submitContactForm);
 
 module.exports = router;

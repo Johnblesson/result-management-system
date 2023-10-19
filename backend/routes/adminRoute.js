@@ -2,6 +2,7 @@ const express = require('express');
 const router = express.Router();
 const adminController = require('../controllers/adminController');
 const studentController = require('../controllers/studentController');
+const contactController = require('../controllers/contactController');
 
 // Apply the adminAuthMiddleware to protect the admin routes
 // const adminAuthMiddleware = require('../middleware/adminAuth'); 
@@ -16,6 +17,9 @@ router.post('/login', adminController.adminLogin);
 // Get & Post Notice
 router.post("/createnotice", adminController.createNotice);
 router.get("/getnotice", adminController.getNotices);
+
+// Retrieve a list of all contact form submissions
+router.get('/list', contactController.getAllContactSubmissions);
 
 // Create a New Student
 router.post('/createstudent', studentController.createStudent);
